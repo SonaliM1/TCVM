@@ -23,10 +23,10 @@ public class TCVMController {
 
 	public static void main(String[] args) throws IOException {
 		new ContainerInitializer().getContainerInstance();
-		new TCVMMenu(/*new InputScanner(),
+		new TCVMMenu(new InputScanner(),
 				
-				new TeaAvailability(), new CoffeeAvailability(), new BlackTeaAvailability(),
+				new MakeTea(), new MakeCoffee(), new MakeBlackTea(), new MakeBlackCoffee(), new TeaAvailability(), new CoffeeAvailability(), new BlackTeaAvailability(),
 				new BlackCoffeeAvailability(), new RefillContainer(), new ContainerStatus(), new ResetContainer(),
-				new TotalSale(new ProductRecord(), Logger.getLogger(Logger.GLOBAL_LOGGER_NAME))*/).showMenu();
+				new TotalSale(new ProductRecord(), Logger.getLogger(Logger.GLOBAL_LOGGER_NAME))).showMenu();
 	}
-}   
+}    

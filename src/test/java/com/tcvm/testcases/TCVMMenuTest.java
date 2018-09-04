@@ -193,7 +193,7 @@ public class TCVMMenuTest {
 		tcvmMenu.showMenu();
 		Mockito.verify(resetContainer).resetingContainer();
 	}
-
+ 
 	@Test
 	public void shouldExitFromContainer() throws IOException {
 		when(inputScanner.nextInt()).thenReturn(9);
