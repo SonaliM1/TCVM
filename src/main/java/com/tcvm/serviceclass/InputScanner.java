@@ -8,7 +8,7 @@ public class InputScanner {
 	public InputScanner() {
 		this.scanner = new Scanner(System.in);
 	}
-
+ 
 	public int nextInt() {
 		return scanner.nextInt();
 	}

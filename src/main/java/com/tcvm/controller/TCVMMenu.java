@@ -1,6 +1,7 @@
 package com.tcvm.controller;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import com.tcvm.serviceclass.BlackCoffeeAvailability;
 import com.tcvm.serviceclass.BlackTeaAvailability;
@@ -33,19 +34,25 @@ public class TCVMMenu {
 	public ResetContainer resetContainer;
 	public TotalSale totalSale;
 
+	
 	public TCVMMenu() {
-		new InputScanner();
-		new MakeTea(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
-		new MakeCoffee(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
-		new MakeBlackTea(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
-		new MakeBlackCoffee(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
-		new TeaAvailability();
-		new CoffeeAvailability();
-		new BlackTeaAvailability();
-		new BlackCoffeeAvailability();
-		new RefillContainer();
-		new ResetContainer();
-		new TotalSale(new ProductRecord());
+		
+	inputScanner =	new InputScanner();
+	makeTea = 	new MakeTea(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
+	makeCoffee = new MakeCoffee(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
+	makeBlackTea = new MakeBlackTea(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
+	makeBlackCoffee = new MakeBlackCoffee(new ContainerInitializer(), new ProductRecord(), new WasteProductRecord());
+		teaAvailability = 	new TeaAvailability();
+		coffeeAvailability = new CoffeeAvailability();
+		blackTeaAvailability = new BlackTeaAvailability();
+		blackCoffeeAvailability = new BlackCoffeeAvailability();
+		refillContainer = new RefillContainer();
+		resetContainer = new ResetContainer();
+		totalSale = new TotalSale(new ProductRecord(), Logger.getLogger(Logger.GLOBAL_LOGGER_NAME) );
+		containerStatus = new ContainerStatus();
+		
+
+	
 	}
 
 	public TCVMMenu(InputScanner inputScanner, MakeTea makeTea, MakeCoffee makeCoffee, MakeBlackTea makeBlackTea,
